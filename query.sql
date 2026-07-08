@@ -31,4 +31,18 @@ FROM
 WHERE
   payment_status IS NULL;
 
+-- query 4
+SELECT
+  booking_id, full_name, fixture, total_cost 
+FROM
+  bookings
+INNER JOIN 
+  users
+ON
+  bookings.user_id = users.user_id
+INNER JOIN
+  matches
+ON
+  bookings.match_id = matches.match_id;
+
 
