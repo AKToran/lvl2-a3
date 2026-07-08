@@ -55,3 +55,19 @@ LEFT JOIN
 ON
   bookings.user_id = users.user_id
 
+-- query 6
+SELECT
+  booking_id,
+  match_id,
+  total_cost
+FROM
+  bookings
+WHERE
+  total_cost > (
+    SELECT
+      AVG(total_cost)
+    FROM
+      bookings
+  );
+
+
