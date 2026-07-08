@@ -45,4 +45,13 @@ INNER JOIN
 ON
   bookings.match_id = matches.match_id;
 
+-- query 5
+SELECT
+  users.user_id, full_name, booking_id
+FROM
+  users
+LEFT JOIN 
+  bookings
+ON
+  bookings.user_id = users.user_id
 
